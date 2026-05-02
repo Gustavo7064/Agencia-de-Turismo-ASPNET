@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Partiu Destino</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Estilos para a Navbar idêntica ao Figma */
+        .navbar-figma {
+            background-color: #ffffff;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .navbar-brand-figma {
+            font-weight: 800;
+            color: #1e3a8a !important;
+            font-size: 1.4rem;
+            margin-right: 80px; /* Espaço após o logo */
+        }
+
+        .nav-link-figma {
+            color: #374151 !important;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin: 0 12px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+            .nav-link-figma:hover {
+                color: #1e3a8a !important;
+            }
+
+        /* Barra de Pesquisa na Nav */
+        .nav-search-container {
+            position: relative;
+            margin-right: 15px;
+            width: 280px;
+            margin-left:20px;
+
+        }
+
+        .nav-search-input {
+            width: 100%;
+            padding: 8px 35px 8px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            background-color: #ffffff;
+        }
+
+        .nav-search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50% );
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Botão Entrar */
+        .btn-entrar-nav {
+            background-color: #1e3a8a;
+            color: white !important;
+            padding: 8px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+            .btn-entrar-nav:hover {
+                background-color: #1e40af;
+            }
+
+        /* Footer Azul Escuro */
+        .footer-figma {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-links-sociais {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+        }
+
+            .footer-links-sociais a {
+                color: white;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-figma">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand navbar-brand-figma" asp-controller="Home" asp-action="Index">
+                    Partiu Destino
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Links Alinhados à Esquerda (ms-0 ou ms-2 para ficar perto do logo) -->
+                    <ul class="navbar-nav me-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-figma" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-figma" asp-controller="Personalizada" asp-action="Index">Viagem Personalizada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-figma" href="#">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-figma" href="#">Pacotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-figma" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+
+                    <!-- Busca e Botão Alinhados à Direita -->
+                    <div class="d-flex align-items-center">
+                        <div class="nav-search-container">
+                            <input type="text" class="nav-search-input" placeholder="Para onde você quer ir?">
+                            <i class="fas fa-search nav-search-icon"></i>
+                        </div>
+                        <a asp-controller="Login" asp-action="Index" class="btn-entrar-nav">Entrar</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+</body>
+
+    <!-- Footer -->
+    <footer class="footer-figma">
+        <div class="container">
+            <div class="footer-links-sociais">
+                <span>Siga nossas redes:</span>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <span>| Whatsapp: (11 ) 95511-2233</span>
+            </div>
+            <p>&copy; 2024 Travel Agency. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+
+    <!-- Footer omitido para brevidade, mantenha o anterior -->
+
+</html>
